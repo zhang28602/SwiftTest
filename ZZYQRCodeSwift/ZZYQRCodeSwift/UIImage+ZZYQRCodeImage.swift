@@ -126,7 +126,7 @@ extension UIImage {
         let height = extent.height * scale
         let cs = CGColorSpaceCreateDeviceGray()
         
-        let context = CIContext(options: nil);
+        let context = CIContext.fixed_context(options: nil)
         let bitmapImage = context.createCGImage(image, from: extent)
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
         guard let bitmapRef = CGContext(data: nil,
